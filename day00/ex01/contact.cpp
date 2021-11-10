@@ -1,5 +1,8 @@
 #include "contact.hpp"
 
+int		contact::spot;
+int		contact::filled;
+
 void	contact::increment(void)
 {
 	contact::spot = 8 % (contact::spot + 1);

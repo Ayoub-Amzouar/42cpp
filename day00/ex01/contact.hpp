@@ -17,7 +17,4 @@ public:
 	std::string darkest_secret;
 };
 
-int		contact::spot;
-int		contact::filled;
-
 #endif
