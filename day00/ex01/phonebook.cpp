@@ -1,26 +1,5 @@
 #include "phonebook.hpp"
 
-bool	phonebook::verify_phone_number(const std::string& pn)
-{
-	bool	res;
-
-	for (int i = 0; i < pn.length(); i++)
-	{
-		if (pn[i] >= '0' && pn[i] <= '9')
-			res = true;
-		else
-		{
-			res = false;
-			return (res);
-		}
-	}
-	return (res);
-}
-
-/*
-	* you should check if the string entered is empty or in the case of phone_number is a valid digits
-*/
-
 void	phonebook::add(void)
 {
 	std::cout << "First Name: ";
@@ -31,18 +10,26 @@ void	phonebook::add(void)
 	getline(std::cin, m_contact[contact::spot].nickname);
 	std::cout << "Phone Number: ";
 	getline(std::cin, m_contact[contact::spot].phone_number);
-	while (!verify_phone_number(m_contact[contact::spot].phone_number))
+	while (m_contact[contact::spot].phone_number.find_first_not_of("0123456789") != std::string::npos)
 	{
 		std::cout << "Phone number is unvalid try again\nPhone Number: ";
 		getline(std::cin, m_contact[contact::spot].phone_number);
 	}
 	std::cout << "Darkest Secret: ";
 	getline(std::cin, m_contact[contact::spot].darkest_secret);
+	m_contact->increment();
 }
 
 void	phonebook::search(void)
 {
-	std::cout << "SEARCH has been called" << std::endl;
+	for (int i = 0; i < contact::filled; i++)
+	{
+		std::cout << "First Name: " << m_contact[i].first_name << std::endl;
+		std::cout << "Last Name: " << m_contact[i].last_name << std::endl;
+		std::cout << "Nickame: " << m_contact[i].nickname << std::endl;
+		std::cout << "Phone Number: " << m_contact[i].phone_number << std::endl;
+		std::cout << "Darkest Secret: " << m_contact[i].darkest_secret << std::endl;
+	}
 }
 
 void	phonebook::verify_command(const std::string& command)
