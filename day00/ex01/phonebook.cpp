@@ -1,5 +1,21 @@
 #include "phonebook.hpp"
 
+void	phonebook::print_contact(void)
+{
+	std::cout << "    Index|" << "First Name" << "|Last Name" << " |Nickname \n";
+	// for (int i = 0; i < contact::filled; i++)
+	// {
+	// 	std::cout << "index | first name | last name | nickname" << std::endl;
+	// }
+}
+
+void	phonebook::search(void)
+{
+	// int		index;
+
+	print_contact();
+}
+
 void	phonebook::add(void)
 {
 	std::cout << "First Name: ";
@@ -18,18 +34,6 @@ void	phonebook::add(void)
 	std::cout << "Darkest Secret: ";
 	getline(std::cin, m_contact[contact::spot].darkest_secret);
 	m_contact->increment();
-}
-
-void	phonebook::search(void)
-{
-	for (int i = 0; i < contact::filled; i++)
-	{
-		std::cout << "First Name: " << m_contact[i].first_name << std::endl;
-		std::cout << "Last Name: " << m_contact[i].last_name << std::endl;
-		std::cout << "Nickame: " << m_contact[i].nickname << std::endl;
-		std::cout << "Phone Number: " << m_contact[i].phone_number << std::endl;
-		std::cout << "Darkest Secret: " << m_contact[i].darkest_secret << std::endl;
-	}
 }
 
 void	phonebook::verify_command(const std::string& command)
