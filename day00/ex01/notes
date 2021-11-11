@@ -2,3 +2,4 @@ My Awesome Phonebook
 	* before showing the prompt to the user print something like, commands available ADD, SEARCH and EXIT
 	* then go <Enter your command: >
 	* we'll create 8 objects of contact class in Phonebook class or not
+	* you should handle ctl+d

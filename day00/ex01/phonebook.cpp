@@ -27,9 +27,26 @@ void	phonebook::print_contact(void)
 
 void	phonebook::search(void)
 {
-	// int		index;
+	int		i;
+	std::string	index;
 
 	print_contact();
+	std::cout << "Enter your index: ";
+	getline(std::cin, index);
+	if (index.find_first_not_of("0123456789") == std::string::npos)
+		i = stoi(index);
+	while (index.find_first_not_of("0123456789") != std::string::npos || i < 0 || i >= contact::filled)
+	{
+		std::cout << "Enter your index: ";
+		getline(std::cin, index);
+		if (index.find_first_not_of("0123456789") == std::string::npos)
+			i = stoi(index);
+	}
+	std::cout << "First Name: " << m_contact[i].first_name << std::endl;
+	std::cout << "Last Name: " << m_contact[i].last_name << std::endl;
+	std::cout << "Nickname: " << m_contact[i].nickname << std::endl;
+	std::cout << "Phone Number: " << m_contact[i].phone_number << std::endl;
+	std::cout << "Darkest Secret: " << m_contact[i].darkest_secret << std::endl;
 }
 
 void	phonebook::add(void)
