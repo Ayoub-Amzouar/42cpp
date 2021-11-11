@@ -1,12 +1,28 @@
 #include "phonebook.hpp"
 
+std::string	phonebook::truncate(const std::string &str)
+{
+	std::string	tmp;
+
+	tmp = str;
+	if (str.length() >= 10)
+	{
+		tmp.resize(10);
+		tmp[9] = '.';
+	}
+	return (tmp);
+}
+
 void	phonebook::print_contact(void)
 {
-	std::cout << "    Index|" << "First Name" << "|Last Name" << " |Nickname \n";
-	// for (int i = 0; i < contact::filled; i++)
-	// {
-	// 	std::cout << "index | first name | last name | nickname" << std::endl;
-	// }
+	std::cout << "     Index|" << "First Name|" << " Last Name|" << "  Nickname|\n";
+	for (int i = 0; i < contact::filled; i++)
+	{
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << phonebook::truncate(m_contact[i].first_name) << "|";
+		std::cout << std::setw(10) << phonebook::truncate(m_contact[i].last_name) << "|";
+		std::cout << std::setw(10) << phonebook::truncate(m_contact[i].nickname) << "|" << std::endl;
+	}
 }
 
 void	phonebook::search(void)
