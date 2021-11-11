@@ -3,3 +3,4 @@ My Awesome Phonebook
 	* then go <Enter your command: >
 	* we'll create 8 objects of contact class in Phonebook class or not
 	* you should handle ctl+d
+	* work on error handling and coloring
