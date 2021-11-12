@@ -10,7 +10,9 @@ std::string	phonebook::truncate(const std::string &str)
 		tmp.resize(10);
 		tmp[9] = '.';
 	}
-	return (tmp); }
+	return (tmp);
+}
+
 void	phonebook::print_contact(void)
 {
 	std::cout << BOLD << "     Index|" << "First Name|" << " Last Name|" << "  Nickname|\n" << RESET;
@@ -30,14 +32,15 @@ void	phonebook::search(void)
 
 	print_contact();
 	std::cout << "Enter your index: ";
-	getline(std::cin, index);
-	if (index.find_first_not_of("0123456789") == std::string::npos)
+	my_getline(index);
+	if (index.empty() == false && index.find_first_not_of("0123456789") == std::string::npos)
 		i = stoi(index);
-	while (index.find_first_not_of("0123456789") != std::string::npos || i < 0 || i >= contact::filled)
+	while (index.empty() == true ||
+	index.find_first_not_of("0123456789") != std::string::npos || i < 0 || i >= contact::filled)
 	{
 		std::cout << "Enter your index: ";
-		getline(std::cin, index);
-		if (index.find_first_not_of("0123456789") == std::string::npos)
+		my_getline(index);
+		if (index.empty() == false && index.find_first_not_of("0123456789") == std::string::npos)
 			i = stoi(index);
 	}
 	std::cout << BOLD << "First Name: " << RESET << m_contact[i].first_name << std::endl;
@@ -50,20 +53,20 @@ void	phonebook::search(void)
 void	phonebook::add(void)
 {
 	std::cout << BOLD << "First Name: " << RESET;
-	getline(std::cin, m_contact[contact::spot].first_name);
+	my_getline(m_contact[contact::spot].first_name);
 	std::cout << BOLD << "Last Name: " << RESET;
-	getline(std::cin, m_contact[contact::spot].last_name);
+	my_getline(m_contact[contact::spot].last_name);
 	std::cout << BOLD << "Nickname: " << RESET;
-	getline(std::cin, m_contact[contact::spot].nickname);
+	my_getline(m_contact[contact::spot].nickname);
 	std::cout << BOLD << "Phone Number: " << RESET;
-	getline(std::cin, m_contact[contact::spot].phone_number);
+	my_getline(m_contact[contact::spot].phone_number);
 	while (m_contact[contact::spot].phone_number.find_first_not_of("0123456789") != std::string::npos)
 	{
 		std::cout << BOLD << "Phone number is unvalid try again: " << RESET;
-		getline(std::cin, m_contact[contact::spot].phone_number);
+		my_getline(m_contact[contact::spot].phone_number);
 	}
 	std::cout << BOLD << "Darkest Secret: " << RESET;
-	getline(std::cin, m_contact[contact::spot].darkest_secret);
+	my_getline(m_contact[contact::spot].darkest_secret);
 	m_contact->increment();
 }
 

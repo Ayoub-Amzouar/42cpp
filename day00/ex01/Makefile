@@ -4,6 +4,7 @@ SRC = phonebook.cpp contact.cpp main.cpp
 
 FLAGS = -Wextra -Wall -Werror
 
+
 all: $(NAME)
 
 $(NAME): $(SRC)
