@@ -2,6 +2,7 @@
 #define PHONEBOOK_H
 
 #include "contact.hpp"
+#include "color.hpp"
 
 class phonebook
 {

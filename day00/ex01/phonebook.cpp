@@ -10,12 +10,10 @@ std::string	phonebook::truncate(const std::string &str)
 		tmp.resize(10);
 		tmp[9] = '.';
 	}
-	return (tmp);
-}
-
+	return (tmp); }
 void	phonebook::print_contact(void)
 {
-	std::cout << "     Index|" << "First Name|" << " Last Name|" << "  Nickname|\n";
+	std::cout << BOLD << "     Index|" << "First Name|" << " Last Name|" << "  Nickname|\n" << RESET;
 	for (int i = 0; i < contact::filled; i++)
 	{
 		std::cout << std::setw(10) << i << "|";
@@ -27,7 +25,7 @@ void	phonebook::print_contact(void)
 
 void	phonebook::search(void)
 {
-	int		i;
+	int			i;
 	std::string	index;
 
 	print_contact();
@@ -42,29 +40,29 @@ void	phonebook::search(void)
 		if (index.find_first_not_of("0123456789") == std::string::npos)
 			i = stoi(index);
 	}
-	std::cout << "First Name: " << m_contact[i].first_name << std::endl;
-	std::cout << "Last Name: " << m_contact[i].last_name << std::endl;
-	std::cout << "Nickname: " << m_contact[i].nickname << std::endl;
-	std::cout << "Phone Number: " << m_contact[i].phone_number << std::endl;
-	std::cout << "Darkest Secret: " << m_contact[i].darkest_secret << std::endl;
+	std::cout << BOLD << "First Name: " << RESET << m_contact[i].first_name << std::endl;
+	std::cout << BOLD << "Last Name: " << RESET << m_contact[i].last_name << std::endl;
+	std::cout << BOLD << "Nickname: " << RESET << m_contact[i].nickname << std::endl;
+	std::cout << BOLD << "Phone Number: " << RESET << m_contact[i].phone_number << std::endl;
+	std::cout << BOLD << "Darkest Secret: " << RESET << m_contact[i].darkest_secret << std::endl;
 }
 
 void	phonebook::add(void)
 {
-	std::cout << "First Name: ";
+	std::cout << BOLD << "First Name: " << RESET;
 	getline(std::cin, m_contact[contact::spot].first_name);
-	std::cout << "Last Name: ";
+	std::cout << BOLD << "Last Name: " << RESET;
 	getline(std::cin, m_contact[contact::spot].last_name);
-	std::cout << "Nickname: ";
+	std::cout << BOLD << "Nickname: " << RESET;
 	getline(std::cin, m_contact[contact::spot].nickname);
-	std::cout << "Phone Number: ";
+	std::cout << BOLD << "Phone Number: " << RESET;
 	getline(std::cin, m_contact[contact::spot].phone_number);
 	while (m_contact[contact::spot].phone_number.find_first_not_of("0123456789") != std::string::npos)
 	{
-		std::cout << "Phone number is unvalid try again\nPhone Number: ";
+		std::cout << BOLD << "Phone number is unvalid try again: " << RESET;
 		getline(std::cin, m_contact[contact::spot].phone_number);
 	}
-	std::cout << "Darkest Secret: ";
+	std::cout << BOLD << "Darkest Secret: " << RESET;
 	getline(std::cin, m_contact[contact::spot].darkest_secret);
 	m_contact->increment();
 }
