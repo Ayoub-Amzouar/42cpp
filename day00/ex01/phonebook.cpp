@@ -31,6 +31,8 @@ void	phonebook::search(void)
 	std::string	index;
 
 	print_contact();
+	if (contact::filled == 0)
+		return ;
 	std::cout << "Enter your index: ";
 	my_getline(index);
 	if (index.empty() == false && index.find_first_not_of("0123456789") == std::string::npos)
@@ -38,7 +40,7 @@ void	phonebook::search(void)
 	while (index.empty() == true ||
 	index.find_first_not_of("0123456789") != std::string::npos || i < 0 || i >= contact::filled)
 	{
-		std::cout << "Enter your index: ";
+		std::cout << "Unvalid Index Try Again: ";
 		my_getline(index);
 		if (index.empty() == false && index.find_first_not_of("0123456789") == std::string::npos)
 			i = stoi(index);
@@ -62,7 +64,7 @@ void	phonebook::add(void)
 	my_getline(m_contact[contact::spot].phone_number);
 	while (m_contact[contact::spot].phone_number.find_first_not_of("0123456789") != std::string::npos)
 	{
-		std::cout << BOLD << "Phone number is unvalid try again: " << RESET;
+		std::cout << BOLD << "Unvalid Phone Number Try Again: " << RESET;
 		my_getline(m_contact[contact::spot].phone_number);
 	}
 	std::cout << BOLD << "Darkest Secret: " << RESET;
