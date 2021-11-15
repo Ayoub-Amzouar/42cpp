@@ -5,10 +5,11 @@ void	randomChump( std::string name );
 
 int		main(void)
 {
-	Zombie* tmp;
+	Zombie* zombie;
 
-	tmp = newZombie("brahim");
-	tmp->announce();
-	delete tmp;
+	zombie = newZombie("But_Why");
+	zombie->announce();
+	delete zombie;
+	randomChump("Sesco");
 	return (0);
 }
