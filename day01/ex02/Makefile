@@ -1,6 +1,6 @@
 NAME = Brain
 
-SRC = main.c
+SRC = main.cpp
 
 FLAGS = -Wextra -Wall -Werror
 
