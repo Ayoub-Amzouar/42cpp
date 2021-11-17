@@ -1,5 +1,7 @@
 #include "Replace.hpp"
 
+// don't use exit() it doesn't call the destructor of classes
+
 int		main( int ac, char *av[] )
 {
 	if (ac != 4)

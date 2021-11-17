@@ -10,7 +10,7 @@ private:
 	std::string		_filename;
 	std::string		_s1;
 	std::string		_s2;
-	std::string		_line;
+	std::string		_lines;
 	std::ifstream	_infile;
 	std::ofstream	_outfile;
 	

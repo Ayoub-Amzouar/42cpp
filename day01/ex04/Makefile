@@ -1,6 +1,6 @@
 NAME = replace
 
-SRC = main.cpp
+SRC = main.cpp Replace.cpp
 
 FLAGS = -Wextra -Wall -Werror
 
@@ -12,6 +12,6 @@ $(NAME): $(SRC)
 clean:
 
 fclean:
-	rm -rf $(NAME)
+	rm -rf $(NAME) *.replace
 
 re: fclean all
