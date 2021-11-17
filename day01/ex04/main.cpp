@@ -1,18 +1,21 @@
 #include "Replace.hpp"
 
-// don't use exit() it doesn't call the destructor of classes
-
 int		main( int ac, char *av[] )
 {
+	int		ret;
+
 	if (ac != 4)
 		std::cout << "Error: Wrong Number Of Arguments" << std::endl;
 	else
 	{
 		Replace	replace( av[1], av[2], av[3] );
-		replace.check_errors();
-		replace.read_from_file();
-		replace.search_and_replace();
-		replace.export_file();
+		ret = replace.check_errors();
+		if (ret == 0)
+			replace.read_from_file();
+		if (ret == 0)
+			ret = replace.search_and_replace();
+		if (ret == 0)
+			replace.export_file();
 	}
 	return (0);
 }

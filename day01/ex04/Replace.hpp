@@ -16,9 +16,9 @@ private:
 	
 public:
 	Replace( std::string ,  std::string , std::string );
-	void	check_errors( void );
+	int		check_errors( void );
 	void	read_from_file( void );
-	void	search_and_replace( void );
+	int		search_and_replace( void );
 	void	export_file( void );
 };
 

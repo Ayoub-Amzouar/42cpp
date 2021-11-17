@@ -4,7 +4,7 @@ Replace::Replace( std::string filename, std::string s1, std::string s2 )
 : _filename(filename), _s1(s1), _s2(s2)
 {}
 
-void	Replace::check_errors( void )
+int		Replace::check_errors( void )
 {
 	std::streampos	pos;
 
@@ -12,7 +12,7 @@ void	Replace::check_errors( void )
 	if (!_infile.is_open())
 	{
 		std::cerr << "Error Opening \"" << _filename << "\"" << std::endl;
-		exit( 0 );
+		return (1);
 	}
 	_infile.seekg( 0, std::ios::end );
 	pos = _infile.tellg();
@@ -25,9 +25,10 @@ void	Replace::check_errors( void )
 		else if (_s2.empty())
 			std::cerr << "S2 Is Empty" << std::endl;
 		_infile.close();
-		exit( 0 );
+		return (1);
 	}
 	_infile.seekg( 0 );
+	return (0);
 }
 
 void	Replace::read_from_file( void )
@@ -40,7 +41,7 @@ void	Replace::read_from_file( void )
 }
 
 
-void	Replace::search_and_replace( void )
+int		Replace::search_and_replace( void )
 {
 	size_t	at;
 
@@ -48,7 +49,7 @@ void	Replace::search_and_replace( void )
 	if (at == std::string::npos)
 	{
 		std::cerr << "No Match Of String \"" << _s1 << "\" Is Found" << std::endl;
-		exit( 0 );
+		return (1);
 	}
 	while (at != std::string::npos)
 	{
@@ -56,6 +57,7 @@ void	Replace::search_and_replace( void )
 		_lines.insert(at, _s2);
 		at = _lines.find(_s1, 0);
 	}
+	return (0);
 }
 
 void	Replace::export_file( void )
@@ -67,7 +69,7 @@ void	Replace::export_file( void )
 	if (!_outfile.is_open())
 	{
 		std::cerr << "Error Opening \"" << _filename << "\"" << std::endl;
-		exit( 0 );
+		return ;
 	}
 	_outfile << _lines;
 	_outfile.close();
