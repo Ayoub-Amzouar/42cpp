@@ -1,8 +1,11 @@
 #include "Replace.hpp"
 
 Replace::Replace( std::string filename, std::string s1, std::string s2 )
-: _filename(filename), _s1(s1), _s2(s2)
-{}
+{
+	_filename = filename;
+	_s1 = s1;
+	_s2 = s2;
+}
 
 int		Replace::check_errors( void )
 {
