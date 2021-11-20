@@ -9,16 +9,16 @@
 
 int		main(void)
 {
-	Karen	obj1;
+	Karen	karen_obj;
 
 	std::cout << std::endl;
-	obj1.complain("error");
+	karen_obj.complain("error");
 	std::cout << std::endl;
-	obj1.complain("warning");
+	karen_obj.complain("warning");
 	std::cout << std::endl;
-	obj1.complain("info");
+	karen_obj.complain("info");
 	std::cout << std::endl;
-	obj1.complain("debug");
+	karen_obj.complain("debug");
 	std::cout << std::endl;
 	return (0);
 }
