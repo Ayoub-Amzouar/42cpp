@@ -37,5 +37,4 @@ void	Karen::complain( std::string level )
 	while (i < 4 && levels[i] != level)
 		i++;
 	(this->*method_ptr[i])();
-	std::cout << std::endl;
 }
