@@ -11,6 +11,8 @@ public:
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
 private:
-	int				_rawBits;
-	const	static	_nbBits;
+	int					_rawBits;
+	const static int	_nbBits;
 };
+
+#endif
