@@ -5,18 +5,37 @@ const int	Fixed::_nbBits = 8;
 
 Fixed::Fixed( void )
 {
+	std::cout << "Default constructor called" << std::endl;
 	_rawBits = 0;
 }
 
-Fixed	Fixed::Fixed( const Fixed& copyObj )
+Fixed::Fixed( const Fixed& copyObj )
 {
-	this->_rawBits = copyObj._rawBits;
+	// this->_rawBits = copyObj._rawBits;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = copyObj;
 }
 
-Fixed	operator = ( const Fixed& fixedObj )
+Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
 {
-	Fixed	newObj;
+	std::cout << "Assignation operator called" << std::endl;
+	_rawBits = fixedObj.getRawBits();
+	return (*this);
+}
 
-	newObj = ;
-	return (newObj);
+Fixed::~Fixed( void )
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
+int		Fixed::getRawBits( void ) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (_rawBits);
+}
+
+void	Fixed::setRawBits( int const raw )
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	_rawBits = raw;
 }
