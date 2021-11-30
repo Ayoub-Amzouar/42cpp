@@ -9,26 +9,22 @@ const int	Fixed::_fractionalBits = 8;
 
 Fixed::Fixed( void )
 {
-	std::cout << "Default constructor called" << std::endl;
 	_rawBits = 0;
 }
 
 Fixed::Fixed( const int val )
 {
-	std::cout << "Int constructor called" << std::endl;
 	_rawBits = (val * (1 << _fractionalBits));
 }
 
 Fixed::Fixed( const float val )
 {
-	std::cout << "Float constructor called" << std::endl;
 	_rawBits = (val * (1 << _fractionalBits));
 }
 
 Fixed::Fixed( const Fixed& copyObj )
 {
 	// this->_rawBits = copyObj._rawBits;
-	std::cout << "Copy constructor called" << std::endl;
 	*this = copyObj;
 }
 
@@ -38,24 +34,7 @@ Fixed::Fixed( const Fixed& copyObj )
 
 Fixed::~Fixed( void )
 {
-	std::cout << "Destructor called" << std::endl;
-}
-
-/*
-	Operator Overloads
-*/ 
-
-Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
-{
-	std::cout << "Assignation operator called" << std::endl;
-	_rawBits = fixedObj._rawBits;
-	return (*this);
-}
-
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
-{
-    os << fixed.toFloat();
-    return (os);
+	// std::cout << "Destructor called" << std::endl;
 }
 
 /*
@@ -64,13 +43,11 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_rawBits);
 }
 
 void	Fixed::setRawBits( int const raw )
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	_rawBits = raw;
 }
 
@@ -82,4 +59,128 @@ float	Fixed::toFloat( void ) const
 int		Fixed::toInt( void ) const
 {
 	return (_rawBits / (1 << _fractionalBits));
+}
+
+/*
+	Operator Overloads
+*/ 
+
+Fixed&	Fixed::operator=( const Fixed& fixedObj )
+{
+	_rawBits = fixedObj._rawBits;
+	return (*this);
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixedObj)
+{
+    os << fixedObj.toFloat();
+    return (os);
+}
+
+bool	Fixed::operator>( const Fixed& fixedObj )
+{
+	return (this->_rawBits > fixedObj.getRawBits());
+}
+
+bool	Fixed::operator<( const Fixed& fixedObj )
+{
+	return (this->_rawBits < fixedObj.getRawBits());
+}
+
+bool	Fixed::operator>=( const Fixed& fixedObj )
+{
+	return (this->_rawBits >= fixedObj.getRawBits());
+}
+
+bool	Fixed::operator<=( const Fixed& fixedObj )
+{
+	return (this->_rawBits >= fixedObj.getRawBits());
+}
+
+bool	Fixed::operator!=( const Fixed& fixedObj )
+{
+	return (this->_rawBits != fixedObj.getRawBits());
+}
+
+bool	Fixed::operator==( const Fixed& fixedObj )
+{
+	return (this->_rawBits == fixedObj.getRawBits());
+}
+
+Fixed&	Fixed::operator+( const Fixed& fixedObj)
+{
+	this->_rawBits += fixedObj.getRawBits();
+	return (*this);
+}
+
+Fixed&	Fixed::operator-( const Fixed& fixedObj)
+{
+	this->_rawBits -= fixedObj.getRawBits();
+	return (*this);
+}
+
+Fixed&	Fixed::operator*( const Fixed& fixedObj)
+{
+	this->_rawBits *= fixedObj.getRawBits();
+	return (*this);
+}
+
+Fixed&	Fixed::operator/( const Fixed& fixedObj)
+{
+	this->_rawBits /= fixedObj.getRawBits();
+	return (*this);
+}
+
+Fixed&	Fixed::operator++()
+{
+	++_rawBits;
+	return (*this);
+}
+
+Fixed&	Fixed::operator++( int )
+{
+	_rawBits++;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--()
+{
+	--_rawBits;
+	return (*this);
+}
+
+Fixed&	Fixed::operator--( int )
+{
+	_rawBits--;
+	return (*this);
+}
+
+// static methods
+
+Fixed&	Fixed::min( Fixed& obj1 , Fixed& obj2 )
+{
+	if (obj1 > obj2)
+		return (obj2);
+	return (obj2);
+}
+
+const Fixed&	Fixed::min( const Fixed& obj1 , const Fixed& obj2 )
+{
+	if (obj1.getRawBits() > obj2.getRawBits())
+		return (obj2);
+	return (obj2);
+}
+
+Fixed&	Fixed::max( Fixed& obj1 , Fixed& obj2 )
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
+
+const Fixed&	Fixed::max( const Fixed& obj1 , const Fixed& obj2 )
+{
+	if (obj1.getRawBits() > obj2.getRawBits())
+		return (obj1);
+	return (obj2);
 }
