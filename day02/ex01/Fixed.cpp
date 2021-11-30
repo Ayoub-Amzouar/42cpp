@@ -3,6 +3,10 @@
 
 const int	Fixed::_fractionalBits = 8;
 
+/*
+	Constructors
+*/ 
+
 Fixed::Fixed( void )
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -28,6 +32,19 @@ Fixed::Fixed( const Fixed& copyObj )
 	*this = copyObj;
 }
 
+/*
+	A Destructor
+*/ 
+
+Fixed::~Fixed( void )
+{
+	std::cout << "Destructor called" << std::endl;
+}
+
+/*
+	Operator Overloads
+*/ 
+
 Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
 {
 	std::cout << "Assignation operator called" << std::endl;
@@ -35,10 +52,15 @@ Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
 	return (*this);
 }
 
-Fixed::~Fixed( void )
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
-	std::cout << "Destructor called" << std::endl;
+    os << fixed.toFloat();
+    return (os);
 }
+
+/*
+	Fixed Member Functions
+*/ 
 
 int		Fixed::getRawBits( void ) const
 {
@@ -60,10 +82,4 @@ float	Fixed::toFloat( void ) const
 int		Fixed::toInt( void ) const
 {
 	return (_rawBits / (1 << _fractionalBits));
-}
-
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
-{
-    os << fixed.toFloat();
-    return (os);
 }
