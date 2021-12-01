@@ -12,7 +12,7 @@ public:
 	void	setRawBits( int const raw );
 private:
 	int					_rawBits;
-	const static int	_nbBits;
+	const static int	_fractionalBits;
 };
 
 #endif

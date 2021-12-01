@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 #include <iostream>
 
-const int	Fixed::_nbBits = 8;
+const int	Fixed::_fractionalBits = 8;
 
 Fixed::Fixed( void )
 {
