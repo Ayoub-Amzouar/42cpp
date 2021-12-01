@@ -1,5 +1,5 @@
-#ifndef __COLOR_H__
-#define __COLOR_H__
+#ifndef __COLOR_HPP__
+#define __COLOR_HPP__
 
 #define BOLD "\e[1m"
 #define RESET "\e[0m\033[0m"

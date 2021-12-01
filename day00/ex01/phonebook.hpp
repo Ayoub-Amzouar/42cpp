@@ -1,5 +1,5 @@
-#ifndef __PHONEBOOK_H__
-#define __PHONEBOOK_H__
+#ifndef __PHONEBOOK_HPP__
+#define __PHONEBOOK_HPP__
 
 #include <iomanip> 
 #include "contact.hpp"
