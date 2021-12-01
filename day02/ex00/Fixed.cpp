@@ -16,7 +16,7 @@ Fixed::Fixed( const Fixed& copyObj )
 	*this = copyObj;
 }
 
-Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
+Fixed&	Fixed::operator= ( const Fixed& fixedObj )
 {
 	std::cout << "Assignation operator called" << std::endl;
 	_rawBits = fixedObj.getRawBits();
