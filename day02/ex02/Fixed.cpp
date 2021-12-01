@@ -53,7 +53,7 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	return ((float)_rawBits / float(1 << _fractionalBits));
+	return ((float)_rawBits / (float)(1 << _fractionalBits));
 }
 
 int		Fixed::toInt( void ) const
@@ -94,7 +94,7 @@ bool	Fixed::operator>=( const Fixed& fixedObj )
 
 bool	Fixed::operator<=( const Fixed& fixedObj )
 {
-	return (this->_rawBits >= fixedObj.getRawBits());
+	return (this->_rawBits <= fixedObj.getRawBits());
 }
 
 bool	Fixed::operator!=( const Fixed& fixedObj )
@@ -107,28 +107,24 @@ bool	Fixed::operator==( const Fixed& fixedObj )
 	return (this->_rawBits == fixedObj.getRawBits());
 }
 
-Fixed&	Fixed::operator+( const Fixed& fixedObj)
+float	Fixed::operator+( const Fixed& fixedObj)
 {
-	this->_rawBits += fixedObj.getRawBits();
-	return (*this);
+	return (this->toFloat() + fixedObj.toFloat());
 }
 
-Fixed&	Fixed::operator-( const Fixed& fixedObj)
+float	Fixed::operator-( const Fixed& fixedObj)
 {
-	this->_rawBits -= fixedObj.getRawBits();
-	return (*this);
+	return (this->toFloat() - fixedObj.toFloat());
 }
 
-Fixed&	Fixed::operator*( const Fixed& fixedObj)
+float	Fixed::operator*( const Fixed& fixedObj)
 {
-	this->_rawBits *= fixedObj.getRawBits();
-	return (*this);
+	return (this->toFloat() * fixedObj.toFloat());
 }
 
-Fixed&	Fixed::operator/( const Fixed& fixedObj)
+float	Fixed::operator/( const Fixed& fixedObj)
 {
-	this->_rawBits /= fixedObj.getRawBits();
-	return (*this);
+	return (this->toFloat() / fixedObj.toFloat());
 }
 
 Fixed&	Fixed::operator++()
@@ -137,10 +133,13 @@ Fixed&	Fixed::operator++()
 	return (*this);
 }
 
-Fixed&	Fixed::operator++( int )
+Fixed	Fixed::operator++( int )
 {
+	Fixed	tmp;
+
+	tmp = *this;
 	_rawBits++;
-	return (*this);
+	return (tmp);
 }
 
 Fixed&	Fixed::operator--()
@@ -149,10 +148,13 @@ Fixed&	Fixed::operator--()
 	return (*this);
 }
 
-Fixed&	Fixed::operator--( int )
+Fixed	Fixed::operator--( int )
 {
+	Fixed	tmp;
+
+	tmp = *this;
 	_rawBits--;
-	return (*this);
+	return (tmp);
 }
 
 // static methods
@@ -161,14 +163,14 @@ Fixed&	Fixed::min( Fixed& obj1 , Fixed& obj2 )
 {
 	if (obj1 > obj2)
 		return (obj2);
-	return (obj2);
+	return (obj1);
 }
 
 const Fixed&	Fixed::min( const Fixed& obj1 , const Fixed& obj2 )
 {
 	if (obj1.getRawBits() > obj2.getRawBits())
 		return (obj2);
-	return (obj2);
+	return (obj1);
 }
 
 Fixed&	Fixed::max( Fixed& obj1 , Fixed& obj2 )

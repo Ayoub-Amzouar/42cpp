@@ -25,15 +25,15 @@ public:
 	bool	operator==( const Fixed& );
 	bool	operator!=( const Fixed& );
 	// arithmetic operators overload
-	Fixed&	operator+( const Fixed& );
-	Fixed&	operator-( const Fixed& );
-	Fixed&	operator*( const Fixed& );
-	Fixed&	operator/( const Fixed& );
-	// pre and post increment and drecremtn operators
-	Fixed& operator++();
-	Fixed& operator++( int );
-	Fixed& operator--();
-	Fixed& operator--( int );
+	float	operator+( const Fixed& );
+	float	operator-( const Fixed& );
+	float	operator*( const Fixed& );
+	float	operator/( const Fixed& );
+	// pre and post increment and drecremtn operators overload
+	Fixed&	operator++();
+	Fixed	operator++( int );
+	Fixed&	operator--();
+	Fixed	operator--( int );
 	// static methods
 	static	Fixed&	min( Fixed& , Fixed& );
 	static const	Fixed&	min( const Fixed& , const Fixed& );
@@ -41,7 +41,6 @@ public:
 	static const	Fixed&	max( const Fixed& , const Fixed& );
 private:
 	int					_rawBits;
-	// change this name in ex00 too
 	const static int	_fractionalBits;
 };
 
