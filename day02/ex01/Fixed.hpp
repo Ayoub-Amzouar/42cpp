@@ -19,7 +19,6 @@ public:
 	int		toInt( void ) const ;
 private:
 	int					_rawBits;
-	// change this name in ex00 too
 	const static int	_fractionalBits;
 };
 

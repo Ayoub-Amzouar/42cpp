@@ -45,10 +45,10 @@ Fixed::~Fixed( void )
 	Operator Overloads
 */ 
 
-Fixed&	Fixed::operator=  ( const Fixed& fixedObj )
+Fixed&	Fixed::operator=( const Fixed& fixedObj )
 {
 	std::cout << "Assignation operator called" << std::endl;
-	_rawBits = fixedObj._rawBits;
+	_rawBits = fixedObj.getRawBits();
 	return (*this);
 }
 
@@ -64,7 +64,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (_rawBits);
 }
 
