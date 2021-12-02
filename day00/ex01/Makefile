@@ -1,6 +1,6 @@
 NAME = phoneBook
 
-SRC = phonebook.cpp contact.cpp main.cpp
+SRC = phonebook.cpp contact.cpp accessors.cpp main.cpp
 
 FLAGS = -Wextra -Wall -Werror
 
