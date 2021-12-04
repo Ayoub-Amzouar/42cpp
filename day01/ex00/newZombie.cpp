@@ -6,13 +6,12 @@ Zombie*		newZombie( std::string name )
 
 	try
 	{
-		zombieObj = new Zombie;
+		zombieObj = new Zombie(name);
 	}
 	catch (std::bad_alloc& ba)
 	{
 		std::cerr << ba.what() << std::endl;
 		exit(1);
 	}
-	zombieObj->setName(name);
 	return(zombieObj);
 }

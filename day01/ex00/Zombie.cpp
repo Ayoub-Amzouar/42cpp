@@ -3,22 +3,20 @@
 #define YELLOW "\033[1;32m"
 #define RESET "\033[0m"
 
-std::string	Zombie::getName( void ) const
-{
-	return (this->_name);
-}
+Zombie::Zombie() {}
 
-void		Zombie::setName( const std::string name )
+Zombie::Zombie( const std::string& Name )
 {
-	this->_name = name;
+	this->name = Name;
+	announce();
 }
 
 void		Zombie::announce( void ) const
 {
-	std::cout << YELLOW << this->_name << RESET << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << YELLOW << this->name << RESET << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::~Zombie()
 {
-	std::cout << YELLOW << this->_name << RESET << " Destructor Has Been Called" << std::endl;
+	std::cout << YELLOW << this->name << RESET << " Destructor Has Been Called" << std::endl;
 }
