@@ -1,6 +1,6 @@
 NAME = replace
 
-SRC = main.cpp Replace.cpp
+SRC = main.cpp
 
 FLAGS = -Wextra -Wall -Werror
 
