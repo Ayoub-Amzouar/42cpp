@@ -9,7 +9,7 @@ int		main(void)
 	brain = "HI THIS IS BRAIN";
 	stringPTR = &brain;
 	std::cout << "------------------------------------------------" << std::endl;
-	std::cout << "Address of brain: " << &brain << std::endl;
+	std::cout << "Address of brain:                 " << &brain << std::endl;
 	std::cout << "Address of brain using stringPTR: " << stringPTR << std::endl;
 	std::cout << "Address of brain using stringREF: " << &brain << std::endl;
 	std::cout << "------------------------------------------------" << std::endl;
