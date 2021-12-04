@@ -8,7 +8,7 @@ int		main(void)
 	int		N;
 
 	N = 10;
-	zombieObj = zombieHorde(N, "Sickl_");
+	zombieObj = zombieHorde(N, "Moulinette");
 	for (int i = 0; i < N; i++)
 		zombieObj[i].announce();
 	delete [] zombieObj;
