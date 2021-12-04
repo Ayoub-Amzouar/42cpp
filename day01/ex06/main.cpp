@@ -15,17 +15,17 @@ int		main( int ac, char *av[] )
 			index++;
 		switch(index)
 		{
-			case 0 :
-				karen_obj.complain("debug");
-				std::cout << std::endl;
-			case 1 :
-				karen_obj.complain("info");
+			case 3 :
+				karen_obj.complain("error");
 				std::cout << std::endl;
 			case 2 :
 				karen_obj.complain("warning");
 				std::cout << std::endl;
-			case 3 :
-				karen_obj.complain("error");
+			case 1 :
+				karen_obj.complain("info");
+				std::cout << std::endl;
+			case 0 :
+				karen_obj.complain("debug");
 				break;
 			default:
 				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
