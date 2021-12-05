@@ -27,7 +27,6 @@ Fixed::Fixed( const float val )
 
 Fixed::Fixed( const Fixed& copyObj )
 {
-	// this->_rawBits = copyObj._rawBits;
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copyObj;
 }
@@ -47,6 +46,8 @@ Fixed::~Fixed( void )
 
 Fixed&	Fixed::operator=( const Fixed& fixedObj )
 {
+	if (this == &fixedObj)
+		return (*this);
 	std::cout << "Assignation operator called" << std::endl;
 	_rawBits = fixedObj.getRawBits();
 	return (*this);
@@ -75,7 +76,7 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	return ((float)_rawBits / float(1 << _fractionalBits));
+	return ((float)_rawBits / (float)(1 << _fractionalBits));
 }
 
 int		Fixed::toInt( void ) const

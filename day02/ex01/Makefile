@@ -2,7 +2,7 @@ NAME = Fixed01
 
 SRC = Fixed.cpp main.cpp
 
-FLAGS = -Wextra -Wall -Werror
+FLAGS = -Wextra -Wall -Werror -std=c++98
 
 all: $(NAME)
 
