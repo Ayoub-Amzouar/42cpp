@@ -67,6 +67,8 @@ int		Fixed::toInt( void ) const
 
 Fixed&	Fixed::operator=( const Fixed& fixedObj )
 {
+	if (this == &fixedObj)
+		return (*this);
 	_rawBits = fixedObj._rawBits;
 	return (*this);
 }

@@ -23,7 +23,7 @@ int	main( void )
 	std::cout << "+: " << c + d << std::endl; // 13.56
 	std::cout << "-: " << c - d << std::endl; // -8.66
 	std::cout << "*: " << c * d << std::endl; // 27.2195
-	std::cout << "/: " << c / d << std::endl; // 0.2205
+	std::cout << "/: " << c / 0 << std::endl; // 0.2205
 	//		Comparizon Operations:
 	std::cout << "\nComparizon Operations: " << std::endl;
 	std::cout << ">:  " << (c > d) << std::endl; // false
