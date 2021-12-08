@@ -14,19 +14,16 @@ ClapTrap::ClapTrap( void )
 
 ClapTrap::ClapTrap( const std::string& val )
 {
-	std::cout << "String Constructor Has Been Called" << std::endl;
 	Name = val;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& copyObj )
 {
-	std::cout << "Copy Constructor Has Been Called" << std::endl;
 	*this = copyObj;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& rop )
 {
-	std::cout << "Assignation Operator Called" << std::endl;
 	if (this == &rop)
 		return (*this);
 	Name = rop.getName();
@@ -93,6 +90,17 @@ void		ClapTrap::setAttackDamage( int val )
 	Required Functions
 */
 
-void	attack(std::string const & target);
-void	takeDamage(unsigned int amount);
-void	beRepaired(unsigned int amount);
+void		ClapTrap::attack(std::string const & target)
+{
+	std::cout << "ClapTrap " << Name << " attack " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
+}
+
+void		ClapTrap::takeDamage(unsigned int amount)
+{
+	std::cout << "ClapTrap " << Name << " took " << amount << " points of damage!" << std::endl;
+}
+
+void		ClapTrap::beRepaired(unsigned int amount)
+{
+	std::cout << "ClapTrap " << Name << " is repaired with " << amount << " points!" << std::endl;
+}
