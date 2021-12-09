@@ -7,14 +7,14 @@
 ScavTrap::ScavTrap( void )
 {
 	std::cout << "ScavTrap Default Constructor Has Been Called" << std::endl;
-	setHitPoints(100);
-	setEnergyPoints(50);
-	setAttackDamage(20);
 }
 
 ScavTrap::ScavTrap( const std::string& val )
 {
 	setName(val);
+	setHitPoints(100);
+	setEnergyPoints(50);
+	setAttackDamage(20);
 }
 
 ScavTrap::ScavTrap( const ScavTrap& objCopy )

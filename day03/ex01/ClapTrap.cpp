@@ -7,14 +7,14 @@
 ClapTrap::ClapTrap( void )
 {
 	std::cout << "ClapTrap Default Constructor Has Been Called" << std::endl;
-	HitPoints = 10;
-	EnergyPoints = 10;
-	AttackDamage = 0;
 }
 
 ClapTrap::ClapTrap( const std::string& val )
 {
 	Name = val;
+	HitPoints = 10;
+	EnergyPoints = 10;
+	AttackDamage = 0;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& copyObj )
@@ -87,7 +87,7 @@ void		ClapTrap::setEnergyPoints( const int val )
 
 void		ClapTrap::setAttackDamage( const int val )
 {
-	EnergyPoints = val;
+	AttackDamage = val;
 }
 
 /*
