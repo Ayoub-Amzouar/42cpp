@@ -7,20 +7,24 @@
 ClapTrap::ClapTrap( void )
 {
 	std::cout << "Default Constructor Has Been Called" << std::endl;
-	HitPoints = 10;
-	EnergyPoints = 10;
-	AttackDamage = 0;
 }
 
 ClapTrap::ClapTrap( const std::string& val )
 {
 	Name = val;
+	HitPoints = 10;
+	EnergyPoints = 10;
+	AttackDamage = 0;
 }
 
 ClapTrap::ClapTrap( const ClapTrap& copyObj )
 {
 	*this = copyObj;
 }
+
+/*
+	Assignment Operator Overload
+*/
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& rop )
 {
@@ -66,22 +70,22 @@ int			ClapTrap::getAttackDamage( void ) const
 	return (AttackDamage);
 }
 
-void		ClapTrap::setName( std::string& val )
+void		ClapTrap::setName( const std::string& val )
 {
 	Name = val;
 }
 
-void		ClapTrap::setHitPoints( int val )
+void		ClapTrap::setHitPoints( const int val )
 {
 	HitPoints = val;
 }
 
-void		ClapTrap::setEnergyPoints( int val )
+void		ClapTrap::setEnergyPoints( const int val )
 {
 	EnergyPoints = val;
 }
 
-void		ClapTrap::setAttackDamage( int val )
+void		ClapTrap::setAttackDamage( const int val )
 {
 	EnergyPoints = val;
 }

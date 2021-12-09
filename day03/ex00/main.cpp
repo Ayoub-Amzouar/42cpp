@@ -5,9 +5,7 @@
 
 int		main(void)
 {
-	ClapTrap	obj;
-
-	obj = ClapTrap("\033[1;32mEren\033[0m");
+	ClapTrap	obj("\033[1;32mEren\033[0m");
 
 	obj.attack("Reiner");
 	obj.takeDamage(13);
