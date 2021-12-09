@@ -37,7 +37,6 @@ ScavTrap&	ScavTrap::operator=( const ScavTrap& rop )
 	return (*this);
 }
 
-
 /*
 	Destructor
 */
@@ -53,7 +52,7 @@ ScavTrap::~ScavTrap( void )
 
 void	ScavTrap::guardGate( void )
 {
-	std::cout << "ScavTrap have enterred in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << getName() << " have enterred in Gate keeper mode" << std::endl;
 }
 
 void		ScavTrap::attack( const std::string & target )
