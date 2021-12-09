@@ -6,7 +6,7 @@
 
 ClapTrap::ClapTrap( void )
 {
-	std::cout << "Default Constructor Has Been Called" << std::endl;
+	std::cout << "ClapTrap Default Constructor Has Been Called" << std::endl;
 	HitPoints = 10;
 	EnergyPoints = 10;
 	AttackDamage = 0;
@@ -21,6 +21,10 @@ ClapTrap::ClapTrap( const ClapTrap& copyObj )
 {
 	*this = copyObj;
 }
+
+/*
+	Assignment Operator Overload
+*/
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap& rop )
 {
@@ -39,7 +43,7 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap& rop )
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << "Destructor Has Been Called" << std::endl;
+	std::cout << "ClapTrap Destructor Has Been Called" << std::endl;
 }
 
 /*
@@ -66,22 +70,22 @@ int			ClapTrap::getAttackDamage( void ) const
 	return (AttackDamage);
 }
 
-void		ClapTrap::setName( std::string& val )
+void		ClapTrap::setName( const std::string& val )
 {
 	Name = val;
 }
 
-void		ClapTrap::setHitPoints( int val )
+void		ClapTrap::setHitPoints( const int val )
 {
 	HitPoints = val;
 }
 
-void		ClapTrap::setEnergyPoints( int val )
+void		ClapTrap::setEnergyPoints( const int val )
 {
 	EnergyPoints = val;
 }
 
-void		ClapTrap::setAttackDamage( int val )
+void		ClapTrap::setAttackDamage( const int val )
 {
 	EnergyPoints = val;
 }
@@ -90,17 +94,17 @@ void		ClapTrap::setAttackDamage( int val )
 	Required Functions
 */
 
-void		ClapTrap::attack(std::string const & target)
+void		ClapTrap::attack( std::string const & target )
 {
 	std::cout << "ClapTrap " << Name << " attack " << target << ", causing " << AttackDamage << " points of damage!" << std::endl;
 }
 
-void		ClapTrap::takeDamage(unsigned int amount)
+void		ClapTrap::takeDamage( unsigned int amount )
 {
 	std::cout << "ClapTrap " << Name << " took " << amount << " points of damage!" << std::endl;
 }
 
-void		ClapTrap::beRepaired(unsigned int amount)
+void		ClapTrap::beRepaired( unsigned int amount )
 {
 	std::cout << "ClapTrap " << Name << " is repaired with " << amount << " points!" << std::endl;
 }
