@@ -1,5 +1,4 @@
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 #define GREEN "\033[1;32m"
 #define RESET "\033[0m"
@@ -9,6 +8,7 @@ int		main(void)
 	ClapTrap	obj1;
 	ScavTrap	obj2;
 	FragTrap	obj3;
+	DiamondTrap	obj4;
 
 	std::cout << "-------------- LEVEL 0 --------------"<< std::endl;
 	
@@ -27,6 +27,12 @@ int		main(void)
 	
 	obj3 = FragTrap("\033[1;32mLevi\033[0m");
 	obj3.highFivesGuys();
+	
+	std::cout << "-------------- LEVEL 3 --------------"<< std::endl;
+	
+	obj4 = DiamondTrap("\033[1;32mArmin\033[0m");
+	obj4.attack("\033[1;34mBertholdt\033[0m");
+	obj4.whoAmI();
 	
 	return (0);
 }
