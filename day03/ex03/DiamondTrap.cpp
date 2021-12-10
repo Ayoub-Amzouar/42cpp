@@ -11,7 +11,7 @@ DiamondTrap::DiamondTrap( void )
 
 DiamondTrap::DiamondTrap( const std::string& val )
 {
-	this->setName(val);
+	setName(val);
 	ClapTrap::setName(val + "__clap_trap");
 	setHitPoints(FragTrap::getHitPoints());
 	setEnergyPoints(ScavTrap::getEnergyPoints());
@@ -31,6 +31,7 @@ DiamondTrap&	DiamondTrap::operator=( const DiamondTrap& rop )
 {
 	if (this == &rop)
 		return (*this);
+	ClapTrap::setName(rop.ClapTrap::getName());
 	setName(rop.getName());
 	setHitPoints(rop.getHitPoints());
 	setEnergyPoints(rop.getEnergyPoints());
@@ -68,7 +69,7 @@ void		DiamondTrap::setName( const std::string& val )
 
 void	DiamondTrap::whoAmI( void )
 {
-	std::cout << "DiamondTrap Name " << this->getName() << " ClapTrap Name " << ClapTrap::getName() << std::endl;
+	std::cout << "DiamondTrap Name " << Name << " ClapTrap Name " << ClapTrap::getName() << std::endl;
 }
 
 void	DiamondTrap::attack( const std::string& target )

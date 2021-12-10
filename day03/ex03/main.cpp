@@ -31,8 +31,8 @@ int		main(void)
 	std::cout << "-------------- LEVEL 3 --------------"<< std::endl;
 	
 	obj4 = DiamondTrap("\033[1;32mArmin\033[0m");
-	obj4.attack("\033[1;34mBertholdt\033[0m");
 	obj4.whoAmI();
+	obj4.attack("\033[1;34mBertholdt\033[0m");
 	
 	return (0);
 }
