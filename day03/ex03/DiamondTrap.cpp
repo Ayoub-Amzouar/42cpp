@@ -9,10 +9,10 @@ DiamondTrap::DiamondTrap( void )
 	std::cout << "DiamondTrap Default Constructor Has Been Called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const std::string& val )
+DiamondTrap::DiamondTrap( const std::string& val ) : ScavTrap(val), FragTrap(val)
 {
 	setName(val);
-	ClapTrap::setName(val + "__clap_trap");
+	ClapTrap::setName(val + "_clap_name");
 	setHitPoints(FragTrap::getHitPoints());
 	setEnergyPoints(ScavTrap::getEnergyPoints());
 	setAttackDamage(FragTrap::getAttackDamage());
