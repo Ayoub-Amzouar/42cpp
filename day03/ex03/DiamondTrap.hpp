@@ -20,7 +20,7 @@ public:
 	void		setName( const std::string& );
 
 	void	whoAmI( void );
-	void	attack( const std::string& );
+	using	ScavTrap::attack;
 };
 
 #endif
