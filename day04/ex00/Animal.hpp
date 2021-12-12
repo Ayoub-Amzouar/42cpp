@@ -13,11 +13,10 @@ public:
 	Animal&	operator=( const Animal& );
 	~Animal( void );
 
-	Animal( const std::string& );
-
 	std::string	getType( void ) const;
 	void		setType( const std::string& );
 
+	void		makeSound( void );
 };
 
 #endif
