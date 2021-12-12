@@ -46,7 +46,7 @@ void		Animal::setType( const std::string& val )
 	Required Functio
 */
 
-void		Animal::makeSound( void )
+void		Animal::makeSound( void ) const
 {
 	std::cout << "Not Specified Yet!" << std::endl;
 }
