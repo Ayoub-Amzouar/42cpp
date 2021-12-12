@@ -2,9 +2,12 @@
 #define __CAT_HPP__
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+private:
+	Brain*	brain;
 public:
 	Cat( void );
 	Cat( const Cat& );
@@ -12,6 +15,9 @@ public:
 	virtual	~Cat( void );
 
 	void		makeSound( void ) const;
+
+	const Brain*	getBrain( void ) const;
+	void			setBrain( const Brain* );
 };
 
 #endif

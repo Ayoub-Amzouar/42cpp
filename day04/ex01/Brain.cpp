@@ -28,7 +28,11 @@ Brain::~Brain( void )
 	std::cout << "Brain Destructor Has Been Called" << std::endl;
 	delete [] ideas;
 }
-	
+
+/*
+	Accessors
+*/
+
 const std::string*	Brain::getIdeas( void ) const
 {
 	return (ideas);
