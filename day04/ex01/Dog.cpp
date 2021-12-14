@@ -7,7 +7,7 @@
 Dog::Dog( void )
 {
 	std::cout << "Dog Constructor Has Been Called" << std::endl;
-	brain = new Brain;
+	brain = new Brain();
 	setType("Dog");
 }
 

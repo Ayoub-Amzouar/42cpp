@@ -7,7 +7,7 @@
 Cat::Cat( void )
 {
 	std::cout << "Cat Constructor Has Been Called" << std::endl;
-	brain = new Brain;
+	brain = new Brain();
 	setType("Cat");
 }
 
