@@ -43,7 +43,7 @@ void		Animal::setType( const std::string& val )
 }
 
 /*
-	Required Functio
+	Required Function
 */
 
 void		Animal::makeSound( void ) const
