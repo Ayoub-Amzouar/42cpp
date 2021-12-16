@@ -18,6 +18,9 @@ public:
 	std::string	getName( void ) const;
 	int			getGrade( void ) const;
 
+	void		increament( void );
+	void		decreament( void );
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -29,5 +32,7 @@ public:
 			const char*	what( void ) const throw();
 	};
 };
+
+std::ostream&	operator<<( std::ostream&, const Bureaucrat& );
 
 #endif

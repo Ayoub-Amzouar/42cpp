@@ -6,22 +6,28 @@
 
 Bureaucrat::Bureaucrat( const std::string& Name, const int Grade ) : name(Name), grade(Grade)
 {
-	std::cout << "Bureaucrat Constructor Has Been Called" << std::endl;
+	// std::cout << name << " Bureaucrat Constructor Has Been Called" << std::endl;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& copyObj )
+Bureaucrat::Bureaucrat( const Bureaucrat& copyObj ) : grade(copyObj.getGrade())
 {
 	*this = copyObj;
 }
 
 Bureaucrat&	Bureaucrat::operator=( const Bureaucrat& rop )
 {
+	if (this == &rop)
+		return (*this);
 	return (*this);	
 }
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "Bureaucrat Destructor Has Been Called" << std::endl;
+	// std::cout << name << " Bureaucrat Destructor Has Been Called" << std::endl;
 }
 
 /*
@@ -39,7 +45,31 @@ int			Bureaucrat::getGrade( void ) const
 }
 
 /*
-	Nest Classes' Function Implementation
+	Required Functions
+*/
+
+void		Bureaucrat::increament( void )
+{
+	int		tmpGrade;
+
+	tmpGrade = getGrade();
+	tmpGrade--;
+	if (tmpGrade < 1)
+		throw GradeTooHighException();
+}
+
+void		Bureaucrat::decreament( void )
+{
+	int		tmpGrade;
+
+	tmpGrade = getGrade();
+	tmpGrade++;
+	if (tmpGrade > 150)
+		throw GradeTooLowException();
+}
+
+/*
+	Nested Classes' Function Implementation
 */
 
 const char*	Bureaucrat::GradeTooHighException::what( void ) const throw()
@@ -50,4 +80,14 @@ const char*	Bureaucrat::GradeTooHighException::what( void ) const throw()
 const char*	Bureaucrat::GradeTooLowException::what( void ) const throw()
 {
 	return ("Grade Too Low!");
+}
+
+/*
+	Operator Overloading
+*/
+
+std::ostream&	operator<<( std::ostream& os, const Bureaucrat& obj )
+{
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	return (os);
 }
