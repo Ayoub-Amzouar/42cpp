@@ -13,15 +13,12 @@ Bureaucrat::Bureaucrat( const std::string& Name, const int Grade ) : name(Name),
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat& copyObj ) : grade(copyObj.getGrade())
-{
-	*this = copyObj;
-}
+Bureaucrat::Bureaucrat( const Bureaucrat& copyObj ) : name(copyObj.getName()), grade(copyObj.getGrade()) {}
 
 Bureaucrat&	Bureaucrat::operator=( const Bureaucrat& rop )
 {
-	if (this == &rop)
-		return (*this);
+	if (this != &rop)
+		this->grade = rop.getGrade();
 	return (*this);	
 }
 
@@ -50,21 +47,15 @@ int			Bureaucrat::getGrade( void ) const
 
 void		Bureaucrat::increament( void )
 {
-	int		tmpGrade;
-
-	tmpGrade = getGrade();
-	tmpGrade--;
-	if (tmpGrade < 1)
+	grade--;
+	if (grade < 1)
 		throw GradeTooHighException();
 }
 
 void		Bureaucrat::decreament( void )
 {
-	int		tmpGrade;
-
-	tmpGrade = getGrade();
-	tmpGrade++;
-	if (tmpGrade > 150)
+	grade++;
+	if (grade > 150)
 		throw GradeTooLowException();
 }
 
