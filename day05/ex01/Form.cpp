@@ -17,7 +17,7 @@ Form::Form( const Form& copyObj ) : name(copyObj.getName()), isSigned(copyObj.ge
 Form&	Form::operator=( const Form& rop )
 {
 	if (this != &rop)
-		this->grade = rop.getGrade();
+		this->isSigned = rop.getIsSigned();
 	return (*this);	
 }
 
@@ -39,7 +39,7 @@ int			Form::getSignGrade( void ) const
 
 int			Form::getExecGrade( void ) const
 {
-	return (execGrade());
+	return (execGrade);
 }
 
 bool		Form::getIsSigned( void ) const
@@ -51,9 +51,18 @@ bool		Form::getIsSigned( void ) const
 	Required Functions
 */
 
-void		Form::beSigned( const Bureaucrat& val )
+void		Form::beSigned( Bureaucrat& val )
 {
-	
+	if (val.getGrade() > this->getSignGrade())
+	{
+		val.signForm(isSigned);
+		throw Form::GradeTooLowException();
+	}
+	else
+	{
+		this->isSigned = true;
+		val.signForm(isSigned);
+	}
 }
 
 /*
@@ -76,6 +85,6 @@ const char*	Form::GradeTooLowException::what( void ) const throw()
 
 std::ostream&	operator<<( std::ostream& os, const Form& obj )
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	os << obj.getName() << ", form sign grade " << obj.getSignGrade() << " execution grade " << obj.getExecGrade() << " sign status " << obj.getIsSigned();
 	return (os);
 }

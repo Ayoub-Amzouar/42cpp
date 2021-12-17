@@ -21,6 +21,8 @@ public:
 	void		increament( void );
 	void		decreament( void );
 
+	void		signForm( bool );
+
 	class GradeTooHighException : public std::exception
 	{
 		public:

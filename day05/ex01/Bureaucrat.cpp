@@ -59,6 +59,14 @@ void		Bureaucrat::decreament( void )
 		throw GradeTooLowException();
 }
 
+void		Bureaucrat::signForm( bool sign )
+{
+	if (sign == true)
+		std::cout << "Bureaucrat signs form" << std::endl;
+	else
+		std::cout << "Bureaucrat cannot sign form because the grade is too low" << std::endl;
+}
+
 /*
 	Nested Classes' Function Implementation
 */

@@ -1,44 +1,26 @@
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int		main( void )
 {
-	/*############## TEST 1 ##############*/
+	/*########## TEST1 ##########*/
 	try
 	{
-		Bureaucrat	Obj("Sesco1", 160);
+		Form	Obj("Eren", 1337, 30);
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
+	catch (const Form::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << "\n\n";
 	}
-	/*############## TEST 2 ##############*/
+	/*########## TEST2 ##########*/
 	try
 	{
-		Bureaucrat	Obj("Sesco2", -3);
+		Form		Obj1("Zenitsu", 13, 37);
+		Bureaucrat	Obj2("Tanjiro", 10);
+
+		Obj1.beSigned(Obj2);
+		std::cout << Obj1 << std::endl;
 	}
-	catch(const Bureaucrat::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	/*############## TEST 3 ##############*/
-	try
-	{
-		Bureaucrat	Obj("Sesco3", 150);
-		std::cout << Obj << std::endl;
-		Obj.decreament();
-	}
-	catch(const Bureaucrat::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	/*############## TEST 4 ##############*/
-	try
-	{
-		Bureaucrat	Obj("Sesco4", 1);
-		std::cout << Obj << std::endl;
-		Obj.increament();
-	}
-	catch(const Bureaucrat::GradeTooHighException& e)
+	catch (const Form::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

@@ -11,7 +11,7 @@ private:
 	const	int			signGrade;
 	const	int			execGrade;
 public:
-	Form( std::string&, int, int );
+	Form( const std::string&, int, int );
 	Form( const Form& );
 	Form&	operator=( const Form& );
 	~Form( void );
@@ -21,7 +21,7 @@ public:
 	int			getSignGrade( void ) const;
 	int			getExecGrade( void ) const;
 
-	void	beSigned( const Bureaucrat& );
+	void	beSigned( Bureaucrat& );
 
 	class GradeTooHighException : public std::exception
 	{
