@@ -12,7 +12,7 @@ Form::Form( const std::string& Name, int signG, int execG ) : name(Name), isSign
 		throw GradeTooLowException();
 }
 
-Form::Form( const Form& copyObj ) : name(copyObj.getName()), isSigned(copyObj.getIsSigned()), signGrade(copyObj.getSignGrade()), execGrade(copyObj.getExecGrade()) {}
+Form::Form( const Form& copyObj ) : name(copyObj.getName()), isSigned(false), signGrade(copyObj.getSignGrade()), execGrade(copyObj.getExecGrade()) {}
 
 Form&	Form::operator=( const Form& rop )
 {
