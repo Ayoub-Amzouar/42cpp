@@ -6,9 +6,9 @@
 	Orthodox Canonical RobotomyRequestForm
 */
 
-RobotomyRequestForm::RobotomyRequestForm( const std::string& Target ) : Form("Default", 145, 137), target(Target) {}
+RobotomyRequestForm::RobotomyRequestForm( const std::string& Target ) : Form("Default", 72, 45), target(Target) {}
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& copyObj ) : Form("Default", 145, 137), target(copyObj.getTarget()) {}
+RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& copyObj ) : Form("Default", 72, 45), target(copyObj.getTarget()) {}
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=( const RobotomyRequestForm& rop )
 {
@@ -51,5 +51,5 @@ void	RobotomyRequestForm::execute( Bureaucrat const & executer )
 	else if (!(this->getIsSigned()))
 		throw Form::FormNotSigned();
 	else
-		throw Form::GradeTooHighException(); 
+		throw Form::GradeTooLowException(); 
 }

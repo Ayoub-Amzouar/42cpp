@@ -84,5 +84,5 @@ void	ShrubberyCreationForm::execute( Bureaucrat const & executer )
 	else if (!(this->getIsSigned()))
 		throw Form::FormNotSigned();
 	else
-		throw Form::GradeTooHighException(); 
+		throw Form::GradeTooLowException(); 
 }
