@@ -37,8 +37,8 @@ void	RobotomyRequestForm::action( void )
 {
 	int		nb;
 
-	srand(time(NULL));
-	nb = rand() % 2;
+	std::srand(time(NULL));
+	nb = std::rand() % 2;
 	if (nb)
 		std::cout << target << " has been robotomized successfully \xF0\x9F\x98\x81" << std::endl;
 	else

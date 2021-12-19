@@ -1,7 +1,6 @@
 #ifndef __FORM_HPP__
 #define __FORM_HPP__
 
-// #include "Bureaucrat.hpp"
 #include <iostream>
 
 class Bureaucrat;

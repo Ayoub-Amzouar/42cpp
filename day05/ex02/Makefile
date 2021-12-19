@@ -7,13 +7,12 @@ FLAGS = -Wextra -Wall -Werror -std=c++98
 all: $(NAME)
 
 $(NAME): $(SRC)
-	# clang++ $(FLAGS) $(SRC) -o $(NAME)
-	g++ $(FLAGS) $(SRC) -o $(NAME)
+	clang++ $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
+	rm *_shrubbery
 
 fclean:
 	rm -rf $(NAME)
-	rm *_shrubbery
 
 re: fclean all
