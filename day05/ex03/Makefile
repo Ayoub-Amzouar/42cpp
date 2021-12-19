@@ -1,6 +1,6 @@
-NAME = Form02
+NAME = Intern
 
-SRC = Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Form.cpp main.cpp
+SRC = Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp Form.cpp main.cpp
 
 FLAGS = -Wextra -Wall -Werror -std=c++98
 
