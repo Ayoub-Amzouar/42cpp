@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 	Orthodox Canonical Form
@@ -65,6 +66,16 @@ void		Bureaucrat::signForm( bool sign )
 		std::cout << "Bureaucrat signs form" << std::endl;
 	else
 		std::cout << "Bureaucrat cannot sign form because the grade is too low" << std::endl;
+}
+
+void		Bureaucrat::executeForm( Form const & form )
+{
+	if ( form.getIsSigned() == true && grade <= form.getExecGrade())
+		std::cout << name << " bureaucrat executes " << form.getName() << " form" << std::endl;
+	else if (!(form.getIsSigned()))
+		std::cout << name << " bureaucrat can't execute " << form.getName() << " form because it is not signed" << std::endl;
+	else
+		std::cout << name << " bureaucrat can't execute " << form.getName() << " form because grade is too low" << std::endl; 
 }
 
 /*

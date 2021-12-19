@@ -1,5 +1,5 @@
 #include "PresidentialPardonForm.hpp"
-
+#include "Bureaucrat.hpp"
 /*
 	Orthodox Canonical PresidentialPardonForm
 */

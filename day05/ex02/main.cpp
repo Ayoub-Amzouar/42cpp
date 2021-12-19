@@ -2,6 +2,8 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+#include "Bureaucrat.hpp"
+
 int		main( void )
 {
 	try
@@ -13,6 +15,8 @@ int		main( void )
 
 		scfObj.beSigned(bObj);
 		scfObj.execute(bObj);
+
+		bObj.executeForm(scfObj);
 	}
 	catch (const Form::GradeTooLowException& e)
 	{

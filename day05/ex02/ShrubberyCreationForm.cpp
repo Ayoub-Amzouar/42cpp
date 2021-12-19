@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
 /*
 	Orthodox Canonical ShrubberyCreationForm
