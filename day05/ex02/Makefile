@@ -1,6 +1,6 @@
 NAME = Form02
 
-SRC = Bureaucrat.cpp Form.cpp main.cpp
+SRC = Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Form.cpp main.cpp
 
 FLAGS = -Wextra -Wall -Werror -std=c++98
 
@@ -14,5 +14,6 @@ clean:
 
 fclean:
 	rm -rf $(NAME)
+	rm *_shrubbery
 
 re: fclean all

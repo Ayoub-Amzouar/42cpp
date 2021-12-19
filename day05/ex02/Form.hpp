@@ -23,6 +23,8 @@ public:
 
 	void	beSigned( Bureaucrat& );
 
+	virtual void	execute( Bureaucrat const & ) = 0;
+
 	class GradeTooHighException : public std::exception
 	{
 		public:

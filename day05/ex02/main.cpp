@@ -1,26 +1,24 @@
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int		main( void )
 {
-	/*########## TEST1 ##########*/
 	try
 	{
-		Form	Obj("Eren", 1337, 30);
-	}
-	catch (const Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << "\n\n";
-	}
-	/*########## TEST2 ##########*/
-	try
-	{
-		Form		Obj1("Zenitsu", 13, 37);
-		Bureaucrat	Obj2("Tanjiro", 10);
+		ShrubberyCreationForm	scfObj("sesco");
+		Bureaucrat				bObj("aamzouar", 15);
 
-		Obj1.beSigned(Obj2);
-		std::cout << Obj1 << std::endl;
+		scfObj.beSigned(bObj);
+		scfObj.execute(bObj);
 	}
 	catch (const Form::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch (const ShrubberyCreationForm::FormNotSigned& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	catch (const Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
