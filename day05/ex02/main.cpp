@@ -1,11 +1,13 @@
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int		main( void )
 {
 	try
 	{
-		ShrubberyCreationForm	scfObj("sesco");
-		Bureaucrat				bObj("aamzouar", 15);
+		// ShrubberyCreationForm	scfObj("sesco");
+		RobotomyRequestForm			scfObj("sesco");
+		Bureaucrat				bObj("aamzouar", 1500);
 
 		scfObj.beSigned(bObj);
 		scfObj.execute(bObj);

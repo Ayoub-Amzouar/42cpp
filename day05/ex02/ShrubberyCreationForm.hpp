@@ -2,6 +2,7 @@
 #define __SHRUBBERY_CREATION_FORM_HPP__
 
 #include "Form.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public Form
 {
@@ -17,12 +18,6 @@ public:
 	void	execute( Bureaucrat const & );
 
 	std::string		getTarget( void ) const;
-
-	class	FormNotSigned : public std::exception
-	{
-		public:
-			const char*	what( void ) const throw();
-	};
 };
 
 #endif

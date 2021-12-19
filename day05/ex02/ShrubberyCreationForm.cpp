@@ -30,8 +30,6 @@ std::string	ShrubberyCreationForm::getTarget( void ) const
 	Required Functions
 */
 
-#include <fstream>
-
 void	ShrubberyCreationForm::action( void )
 {
 	std::string		fileName;
@@ -84,16 +82,7 @@ void	ShrubberyCreationForm::execute( Bureaucrat const & executer )
 	if ( this->getIsSigned() == true && executer.getGrade() <= this->getExecGrade())
 		action();
 	else if (!(this->getIsSigned()))
-		throw FormNotSigned();
+		throw Form::FormNotSigned();
 	else
 		throw Form::GradeTooHighException(); 
-}
-
-/*
-	Nested Classes' Function Implementation
-*/
-
-const char*	ShrubberyCreationForm::FormNotSigned::what( void ) const throw()
-{
-	return ("Form Not Signed!");
 }

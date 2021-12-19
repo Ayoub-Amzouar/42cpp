@@ -79,6 +79,11 @@ const char*	Form::GradeTooLowException::what( void ) const throw()
 	return ("Grade Too Low!");
 }
 
+const char* Form::FormNotSigned::what( void ) const throw()
+{
+	return ("Form Not Signed!");
+}
+
 /*
 	Operator Overloading
 */
