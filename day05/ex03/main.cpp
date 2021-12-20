@@ -1,22 +1,27 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+#include "Intern.hpp"
 
 int		main( void )
 {
 	try
 	{
-		// ShrubberyCreationForm	scfObj("sesco");
-		// RobotomyRequestForm		scfObj("sesco");
-		PresidentialPardonForm		scfObj("sesco");
-		Bureaucrat					bObj("aamzouar", 1);
+		Bureaucrat	bObj("aamzouar", 1);
+		Intern		internObj;
 
-		scfObj.beSigned(bObj);
-		scfObj.execute(bObj);
+		Form*	formObj = internObj.makeForm("presidential pard", "sesco");
+		
+		if (!formObj)
+			return (1);
 
-		bObj.executeForm(scfObj);
+		formObj->beSigned(bObj);
+		formObj->execute(bObj);
+
+		bObj.executeForm(*formObj);
+		delete formObj;
 	}
 	catch (const Form::GradeTooLowException& e)
 	{

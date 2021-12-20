@@ -16,7 +16,7 @@ public:
 	Form( const std::string&, int, int );
 	Form( const Form& );
 	Form&	operator=( const Form& );
-	~Form( void );
+	virtual ~Form( void );
 
 	std::string	getName( void ) const;
 	bool		getIsSigned( void ) const;
