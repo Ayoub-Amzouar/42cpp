@@ -14,6 +14,7 @@ public:
 	FragTrap( const std::string& );
 
 	void	highFivesGuys( void );
+	void	attack( const std::string & );
 };
 
 #endif
