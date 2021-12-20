@@ -4,9 +4,13 @@
 	Constructors
 */
 
+ClapTrap::ClapTrap( void )
+{
+	std::cout << "ClapTrap Default Constructor Has Been Called" << std::endl;
+}
+
 ClapTrap::ClapTrap( const std::string& val )
 {
-	std::cout << "Parameterized Constructor Has Been Called" << std::endl;
 	Name = val;
 	HitPoints = 10;
 	EnergyPoints = 10;

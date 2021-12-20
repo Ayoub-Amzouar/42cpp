@@ -11,6 +11,7 @@ private:
 	int			EnergyPoints;
 	int			AttackDamage;
 public:
+	ClapTrap( void );
 	ClapTrap( const std::string& );
 	ClapTrap( const ClapTrap& );
 	ClapTrap&	operator=( const ClapTrap& );
