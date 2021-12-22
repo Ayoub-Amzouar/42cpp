@@ -13,6 +13,7 @@ private:
 	const	int			signGrade;
 	const	int			execGrade;
 public:
+	Form( void );
 	Form( const std::string&, int, int );
 	Form( const Form& );
 	Form&	operator=( const Form& );

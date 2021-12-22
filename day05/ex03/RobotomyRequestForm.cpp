@@ -7,6 +7,8 @@
 	Orthodox Canonical RobotomyRequestForm
 */
 
+RobotomyRequestForm::RobotomyRequestForm( void ) {};
+
 RobotomyRequestForm::RobotomyRequestForm( const std::string& Target ) : Form("Default", 72, 45), target(Target) {}
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& copyObj ) : Form("Default", 72, 45), target(copyObj.getTarget()) {}

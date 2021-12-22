@@ -46,5 +46,6 @@ Form*	Intern::makeForm( std::string name, std::string target )
 			std::cerr << "\"" << name << "\" there's no such form!" << std::endl;
 			return (NULL);
 	}
+	std::cout << "Intern creates " << formsName[i] << std::endl;
 	return (formPtr);
 }

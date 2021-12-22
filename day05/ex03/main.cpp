@@ -12,7 +12,7 @@ int		main( void )
 		Bureaucrat	bObj("aamzouar", 1);
 		Intern		internObj;
 
-		Form*	formObj = internObj.makeForm("presidential pard", "sesco");
+		Form*	formObj = internObj.makeForm("robotomy request", "sesco");
 		
 		if (!formObj)
 			return (1);
@@ -23,15 +23,7 @@ int		main( void )
 		bObj.executeForm(*formObj);
 		delete formObj;
 	}
-	catch (const Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch (const ShrubberyCreationForm::FormNotSigned& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch (const Bureaucrat::GradeTooLowException& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

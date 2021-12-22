@@ -4,6 +4,8 @@
 	Orthodox Canonical PresidentialPardonForm
 */
 
+PresidentialPardonForm::PresidentialPardonForm( void ) {}
+
 PresidentialPardonForm::PresidentialPardonForm( const std::string& Target ) : Form("Default", 25, 5), target(Target) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm& copyObj ) : Form("Default", 25, 5), target(copyObj.getTarget()) {}

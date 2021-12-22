@@ -9,6 +9,7 @@ class ShrubberyCreationForm : public Form
 private:
 	std::string target;
 public:
+	ShrubberyCreationForm( void );
 	ShrubberyCreationForm( const std::string& );
 	ShrubberyCreationForm( const ShrubberyCreationForm& );
 	ShrubberyCreationForm&	operator=( const ShrubberyCreationForm& );
