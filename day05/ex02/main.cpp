@@ -18,15 +18,7 @@ int		main( void )
 
 		bObj.executeForm(scfObj);
 	}
-	catch (const Form::GradeTooLowException& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch (const ShrubberyCreationForm::FormNotSigned& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	catch (const Bureaucrat::GradeTooLowException& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

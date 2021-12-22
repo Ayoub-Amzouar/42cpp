@@ -8,6 +8,7 @@ class RobotomyRequestForm : public Form
 private:
 	std::string target;
 public:
+	RobotomyRequestForm( void );
 	RobotomyRequestForm( const std::string& );
 	RobotomyRequestForm( const RobotomyRequestForm& );
 	RobotomyRequestForm&	operator=( const RobotomyRequestForm& );

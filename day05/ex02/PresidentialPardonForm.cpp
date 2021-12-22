@@ -1,8 +1,11 @@
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
+
 /*
 	Orthodox Canonical PresidentialPardonForm
 */
+
+PresidentialPardonForm::PresidentialPardonForm( void ) {}
 
 PresidentialPardonForm::PresidentialPardonForm( const std::string& Target ) : Form("Default", 25, 5), target(Target) {}
 

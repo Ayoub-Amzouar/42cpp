@@ -9,7 +9,6 @@ Bureaucrat::Bureaucrat( void ) {}
 
 Bureaucrat::Bureaucrat( const std::string& Name, const int Grade ) : name(Name), grade(Grade)
 {
-	// std::cout << name << " Bureaucrat Constructor Has Been Called" << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > 150)

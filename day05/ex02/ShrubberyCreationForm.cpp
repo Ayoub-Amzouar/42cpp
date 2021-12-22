@@ -5,6 +5,8 @@
 	Orthodox Canonical ShrubberyCreationForm
 */
 
+ShrubberyCreationForm::ShrubberyCreationForm( void ) {}
+
 ShrubberyCreationForm::ShrubberyCreationForm( const std::string& Target ) : Form("Default", 145, 137), target(Target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm& copyObj ) : Form("Default", 145, 137), target(copyObj.getTarget()) {}
