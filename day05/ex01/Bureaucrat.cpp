@@ -1,8 +1,11 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 	Orthodox Canonical Form
 */
+
+Bureaucrat::Bureaucrat( void ) {}
 
 Bureaucrat::Bureaucrat( const std::string& Name, const int Grade ) : name(Name), grade(Grade)
 {
@@ -59,12 +62,12 @@ void		Bureaucrat::decreament( void )
 		throw GradeTooLowException();
 }
 
-void		Bureaucrat::signForm( bool sign )
+void		Bureaucrat::signForm( const Form* val )
 {
-	if (sign == true)
-		std::cout << "Bureaucrat signs form" << std::endl;
+	if (val->getIsSigned() == true)
+		std::cout << this->name << " signs " << val->getName() << std::endl;
 	else
-		std::cout << "Bureaucrat cannot sign form because the grade is too low" << std::endl;
+		std::cout << this->name << " cannot sign " << val->getName() << " because the grade is too low" << std::endl;
 }
 
 /*

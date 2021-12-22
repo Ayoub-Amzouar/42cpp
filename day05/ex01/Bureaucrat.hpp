@@ -4,12 +4,15 @@
 #include <iostream>
 #include <exception>
 
+class	Form;
+
 class Bureaucrat
 {
 private:
 	const std::string	name;
 	int					grade;
 public:
+	Bureaucrat( void );
 	Bureaucrat( const std::string&, const int );
 	Bureaucrat( const Bureaucrat& );
 	Bureaucrat&	operator=( const Bureaucrat& );
@@ -21,7 +24,7 @@ public:
 	void		increament( void );
 	void		decreament( void );
 
-	void		signForm( bool );
+	void		signForm( const Form* );
 
 	class GradeTooHighException : public std::exception
 	{

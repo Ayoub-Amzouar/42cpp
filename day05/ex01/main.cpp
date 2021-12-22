@@ -7,7 +7,7 @@ int		main( void )
 	{
 		Form	Obj("Eren", 1337, 30);
 	}
-	catch (const Form::GradeTooLowException& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << "\n\n";
 	}
@@ -20,7 +20,7 @@ int		main( void )
 		Obj1.beSigned(Obj2);
 		std::cout << Obj1 << std::endl;
 	}
-	catch (const Form::GradeTooLowException& e)
+	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}

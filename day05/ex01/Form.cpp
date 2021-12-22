@@ -4,6 +4,8 @@
 	Orthodox Canonical Form
 */
 
+Form::Form( void ) : signGrade(0), execGrade(0) {}
+
 Form::Form( const std::string& Name, int signG, int execG ) : name(Name), isSigned(false), signGrade(signG), execGrade(execG)
 {
 	if (signGrade < 1)
@@ -55,13 +57,13 @@ void		Form::beSigned( Bureaucrat& val )
 {
 	if (val.getGrade() > this->getSignGrade())
 	{
-		val.signForm(isSigned);
+		val.signForm(this);
 		throw Form::GradeTooLowException();
 	}
 	else
 	{
 		this->isSigned = true;
-		val.signForm(isSigned);
+		val.signForm(this);
 	}
 }
 
@@ -85,6 +87,6 @@ const char*	Form::GradeTooLowException::what( void ) const throw()
 
 std::ostream&	operator<<( std::ostream& os, const Form& obj )
 {
-	os << obj.getName() << ", form sign grade " << obj.getSignGrade() << " execution grade " << obj.getExecGrade() << " sign status " << obj.getIsSigned();
+	os << obj.getName() << ", sign grade " << obj.getSignGrade() << ". execution grade " << obj.getExecGrade() << ", sign status " << obj.getIsSigned();
 	return (os);
 }
