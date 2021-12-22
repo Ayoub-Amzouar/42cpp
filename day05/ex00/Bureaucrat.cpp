@@ -4,6 +4,8 @@
 	Orthodox Canonical Form
 */
 
+Bureaucrat::Bureaucrat( void ) {}
+
 Bureaucrat::Bureaucrat( const std::string& Name, const int Grade ) : name(Name), grade(Grade)
 {
 	// std::cout << name << " Bureaucrat Constructor Has Been Called" << std::endl;

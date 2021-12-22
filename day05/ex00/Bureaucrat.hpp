@@ -10,6 +10,7 @@ private:
 	const std::string	name;
 	int					grade;
 public:
+	Bureaucrat( void );
 	Bureaucrat( const std::string&, const int );
 	Bureaucrat( const Bureaucrat& );
 	Bureaucrat&	operator=( const Bureaucrat& );
