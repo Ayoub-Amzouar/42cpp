@@ -11,7 +11,7 @@ protected:
 public:
 	Animal( void );
 	Animal( const Animal& );
-	virtual Animal&	operator=( const Animal& );
+	Animal&	operator=( const Animal& );
 	virtual	~Animal( void );
 
 	std::string				getType( void ) const;
@@ -19,7 +19,5 @@ public:
 
 	virtual void			makeSound( void ) const;
 };
-
-std::ostream&	operator<<( std::iostream&, const Brain* );
 
 #endif

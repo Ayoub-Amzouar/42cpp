@@ -29,19 +29,6 @@ Animal::~Animal( void )
 }
 
 /*
-	Operator Overload
-*/
-
-std::ostream&	operator<<( std::ostream& os, const Brain* brain )
-{
-	const std::string*	ptr;
-
-	ptr = brain->getIdeas();
-	os << ptr[0];
-	return (os);
-}
-
-/*
 	Accessors
 */
 
