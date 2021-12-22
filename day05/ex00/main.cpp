@@ -7,7 +7,7 @@ int		main( void )
 	{
 		Bureaucrat	Obj("Sesco1", 160);
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -16,7 +16,7 @@ int		main( void )
 	{
 		Bureaucrat	Obj("Sesco2", -3);
 	}
-	catch(const Bureaucrat::GradeTooHighException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -27,7 +27,7 @@ int		main( void )
 		std::cout << Obj << std::endl;
 		Obj.decreament();
 	}
-	catch(const Bureaucrat::GradeTooLowException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
@@ -38,7 +38,7 @@ int		main( void )
 		std::cout << Obj << std::endl;
 		Obj.increament();
 	}
-	catch(const Bureaucrat::GradeTooHighException& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
