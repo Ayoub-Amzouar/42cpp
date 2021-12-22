@@ -11,7 +11,7 @@ int		main(void)
 	std::cout << "------------------------------------------------" << std::endl;
 	std::cout << "Address of brain:                 " << &brain << std::endl;
 	std::cout << "Address of brain using stringPTR: " << stringPTR << std::endl;
-	std::cout << "Address of brain using stringREF: " << &brain << std::endl;
+	std::cout << "Address of brain using stringREF: " << &stringREF << std::endl; // setting address of brain instead of stringREF is fixed
 	std::cout << "------------------------------------------------" << std::endl;
 	std::cout << "Brain displyed using stringPTR: " << *stringPTR << std::endl;
 	std::cout << "Brain displyed using stringREF: " << stringREF << std::endl;
