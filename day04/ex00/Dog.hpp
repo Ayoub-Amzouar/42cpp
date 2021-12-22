@@ -9,7 +9,7 @@ public:
 	Dog( void );
 	Dog( const Dog& );
 	Dog&	operator=( const Dog& );
-	virtual	~Dog( void );
+	~Dog( void );
 
 	void	makeSound( void ) const;
 };
