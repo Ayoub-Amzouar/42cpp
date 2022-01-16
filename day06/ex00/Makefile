@@ -9,8 +9,6 @@ all: $(NAME)
 $(NAME): $(SRC)
 	clang++ $(FLAGS) $(SRC) -o $(NAME)
 
-clean:
-
 fclean:
 	rm -rf $(NAME)
 

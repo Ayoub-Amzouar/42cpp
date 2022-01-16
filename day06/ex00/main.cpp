@@ -2,12 +2,6 @@
 #include <sstream>
 #include <iomanip>
 
-/*
-	stoa()
-	stof()
-	stod()
-*/
-
 void	print_pseudo_f( std::string input )
 {
 	int		len;
@@ -30,7 +24,7 @@ void	print_pseudo_d( std::string input )
 
 void	print_valid( std::string input )
 {
-	double	nb;
+	double				nb;
 	std::stringstream	stream;
 
 	stream << input;
