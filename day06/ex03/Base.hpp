@@ -1,10 +1,10 @@
 #ifndef __BASS_HPP__
 #define __BASS_HPP__
 
-class Bass
+class Base
 {
 public:
-    virtual ~Bass( void );
+    virtual ~Base( void );
 };
 
 

@@ -1,6 +1,6 @@
 NAME = Dynamic
 
-SRC = main.cpp
+SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
 
 FLAGS = -Wextra -Wall -Werror -std=c++98
 

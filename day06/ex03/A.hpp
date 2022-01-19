@@ -1,8 +1,11 @@
 #ifndef __A_HPP__
 #define __A_HPP__
 
-#include "Bass.hpp"
+#include "Base.hpp"
 
-class A : public Bass {};
+class A : public Base {
+public:
+	~A();
+};
 
 #endif
