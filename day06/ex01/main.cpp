@@ -15,12 +15,15 @@ Data*       deserialize( uintptr_t raw )
 int     main( void )
 {
 	Data*       ptr;
+	Data*       tmp;
 	uintptr_t   raw;
 
     ptr = new Data;
+	ptr->age = 25;
 	std::cout << "Data pointer:        " << ptr << std::endl;
     raw = serialize(ptr);
-	std::cout << "Deserialize pointer: " << deserialize(raw) << std::endl;
+	tmp = deserialize(raw);
+	std::cout << "Deserialize pointer: " << tmp << "\nAnd the age value is: " << tmp->age << std::endl;
     delete ptr;
 	return (0);
 }
