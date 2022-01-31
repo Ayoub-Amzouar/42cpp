@@ -1,6 +1,4 @@
 #include <iostream>
-#include <sstream>
-#include <iomanip>
 
 void	print_pseudo_f( std::string input )
 {
@@ -25,17 +23,15 @@ void	print_pseudo_d( std::string input )
 void	print_valid( std::string input )
 {
 	double				nb;
-	std::stringstream	stream;
-
-	stream << input;
-	stream >> nb;
+	
+	nb = std::atof(input.c_str());
 	if (isprint(nb) == false)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: " << static_cast<char>(nb) << std::endl;
 	std::cout << "int: " << static_cast<int>(nb) << std::endl;
 	std::cout << "float: " << static_cast<float>(nb) << (nb != (int)nb ? "" : ".0") << 'f' << std::endl;
-	std::cout << "double: " << static_cast<float>(nb) << (nb != (int)nb ? "" : ".0") << std::endl;
+	std::cout << "double: " << static_cast<double>(nb) << (nb != (int)nb ? "" : ".0") << std::endl;
 }
 
 void	check_input( char *input )
