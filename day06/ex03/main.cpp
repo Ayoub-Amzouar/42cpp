@@ -75,5 +75,7 @@ int     main( void )
 	p = generate();
 	identify(p);
 	identify(*r);
+	delete p;
+	delete r;
 	return (0);
 }
