@@ -18,9 +18,9 @@ int     main( void )
 	uintptr_t   raw;
 
     ptr = new Data;
-	std::cout << "Data pointer: " << ptr << std::endl;
+	std::cout << "Data pointer:        " << ptr << std::endl;
     raw = serialize(ptr);
-	std::cout << "Deserialize pointer: " << deserialize(raw);
+	std::cout << "Deserialize pointer: " << deserialize(raw) << std::endl;
     delete ptr;
 	return (0);
 }
