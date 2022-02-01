@@ -1,7 +1,8 @@
 #include "iter.hpp"
 #include <iostream>
 
-void	print_arr( int nb )
+template<typename T>
+void	print_arr( T const &nb )
 {
 	std::cout << nb << std::endl;
 }
