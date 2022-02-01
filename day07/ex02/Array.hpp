@@ -7,7 +7,7 @@ class Array
 public:
 	Array( void )
 	{
-		this->_a = new T;
+		this->_a = new T[0];
 		this->_size = 0;
 	}
 	Array( unsigned int n ) 
@@ -28,13 +28,7 @@ public:
 			this->_a[i] = copy._a[i];
 		return (*this);
 	}
-	~Array( void )
-	{
-		if (_size != 0)
-			delete [] this->_a;
-		else
-			delete this->_a;
-	}
+	~Array( void ) { delete [] this->_a; }
 	int		size( void ) { return (this->_size); }
 private:
 	T	*_a;
