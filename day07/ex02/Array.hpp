@@ -16,33 +16,33 @@ public:
 	{
 		this->_arr = new T[n];
 		this->_size = n;
-		for (int i = 0; i < n; i++)
-			this->_arr[i] = int();
+		for (unsigned int i = 0; i < n; i++)
+			this->_arr[i] = T();
 	}
 	Array( Array const &copy )
 	{
 		this->_size = copy.size();
 		this->_arr = new T[this->_size];
-		for (int i = 0; i < this->_size; i++)
+		for (unsigned int i = 0; i < this->_size; i++)
 			this->_arr[i] = copy._arr[i];
 	}
 	Array& operator=( Array const &rop )
 	{
 		if (&rop == this)
-			return (this);
+			return (*this);
 		if (this->_size < rop.size())
 		{
 			delete [] this->_arr;
 			this->_arr = new T[rop.size()];
 			this->_size = rop.size();
 		}
-		for (int i = 0; i < rop.size(); i++)
+		for (unsigned int i = 0; i < rop.size(); i++)
 			this->_arr[i] = rop._arr[i];
 		return (*this);
 	}
-	T&	operator[]( int i )
+	T&	operator[]( unsigned int i )
 	{
-		if (i > this->_size || i <= 0)
+		if (i > this->_size || this->_size == 0)
 		{
 			throw IndexOutOfBounds();
 			return (this->_arr[0]);
@@ -62,10 +62,10 @@ public:
 		if (this->_size != 0)
 			delete [] this->_arr;
 	}
-	int		size( void ) { return (this->_size); }
+	int		size( void ) const { return (this->_size); }
 private:
-	T	*_arr;
-	int	_size;
+	T				*_arr;
+	unsigned int	_size;
 };
 
 #endif
