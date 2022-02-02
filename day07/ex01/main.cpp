@@ -14,7 +14,7 @@ int		main( void )
 	for (int i = 0; i < 4; i++)
 		arr[i] = i + 1;
 	
-	iter(&arr, 4, &print_arr);
+	iter(arr, 4, &print_arr);
 	delete [] arr;
 	return (0);
 }
