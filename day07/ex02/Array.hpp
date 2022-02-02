@@ -42,7 +42,7 @@ public:
 	}
 	T&	operator[]( int i )
 	{
-		if (i > this->_size)
+		if (i > this->_size || i <= 0)
 		{
 			throw IndexOutOfBounds();
 			return (this->_arr[0]);
