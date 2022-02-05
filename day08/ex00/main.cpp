@@ -10,7 +10,7 @@ int		main(void)
 		vec.push_back(i + 1);
 	try
 	{
-		it = easyFind(vec, 15);
+		it = easyFind(vec, 3);
 		std::cout << *it << std::endl;
 	}
 	catch (std::exception &e)
