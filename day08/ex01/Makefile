@@ -1,6 +1,6 @@
 NAME = Span 
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
 FLAGS = -Wextra -Wall -Werror -std=c++98
 
