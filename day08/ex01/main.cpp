@@ -21,8 +21,14 @@ int		main( void )
 
 	for_each(vec.begin(), vec.end(), &print);
 	std::cout << std::endl;
-	sp.addNumber(vec);
-
+	try
+	{
+		sp.addNumber(vec);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	try
 	{
 		std::cout << sp.shortestSpan() << std::endl;
@@ -39,5 +45,28 @@ int		main( void )
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	// {
+	// 	Span	sp(3);
+
+	// 	try
+	// 	{
+	// 		sp.addNumber(10);
+	// 		sp.addNumber(1);
+	// 		sp.addNumber(12);
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// 	try
+	// 	{
+	// 		std::cout << sp.shortestSpan() << std::endl;
+	// 		std::cout << sp.longestSpan() << std::endl;
+	// 	}
+	// 	catch(const std::exception& e)
+	// 	{
+	// 		std::cerr << e.what() << '\n';
+	// 	}
+	// }
 	return (0);
 }

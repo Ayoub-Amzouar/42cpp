@@ -35,7 +35,7 @@ public:
 	};
 private:
 	std::vector<int>			_vec;
-	std::vector<int>::iterator	_it;
+	unsigned int				_size;
 };
 
 #endif

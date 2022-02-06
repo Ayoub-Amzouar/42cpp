@@ -6,17 +6,12 @@ Span::Span( void ) {}
 
 Span::Span( unsigned int N )
 {
-	this->_vec.reserve(N);
-	this->_it = this->_vec.begin();
+	this->_size = N;
 }
 
 Span::Span( const Span& copy )
 {
-	std::vector<int>::const_iterator	it;
-
-	it = copy._vec.begin();
-	while (it != copy._vec.end())
-		this->_vec.push_back(*it);
+	this->_vec.assign(copy._vec.begin(), copy._vec.end());
 }
 
 Span&	Span::operator=( const Span& rop )
@@ -24,12 +19,7 @@ Span&	Span::operator=( const Span& rop )
 	if (this == &rop)
 		return (*this);
 	
-	std::vector<int>::const_iterator	it;
-
-	it = rop._vec.begin();
-	this->_vec.clear();
-	while (it != rop._vec.end())
-		this->_vec.push_back(*it);
+	this->_vec.assign(rop._vec.begin(), rop._vec.end());
 	return (*this);
 }
 
@@ -37,18 +27,18 @@ Span::~Span( void ) {}
 
 void	Span::addNumber( int nb )
 {
-	if (this->_it != this->_vec.end())
-	{
-		*this->_it = nb;
-		this->_it++;
-	}
+	if (this->_vec.size() < this->_size)
+		this->_vec.push_back(nb);
 	else
 		throw AlreadyFilled();
 }
 
 void	Span::addNumber( const std::vector<int>& copy )
 {
-	this->_vec.assign(copy.begin(), copy.end());
+	if (copy.size() <= this->_size)
+		this->_vec.assign(copy.begin(), copy.end());
+	else
+		throw AlreadyFilled();
 }
 
 int		Span::shortestSpan( void )
